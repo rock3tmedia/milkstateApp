@@ -1,0 +1,69 @@
+{
+    "home" : [
+        {
+            "data_link" : "",
+            "url_data" : [],
+            "title" : "Home",
+            "description" : "Home Page.",
+            "css" : ["/css/home.css"],
+            "js" : ["/js/template.js","/js/front.js"],
+            "template_data" : ["topMenu"],
+            "template_functions" : ["topMenuFade"],
+            "landing_page_data" :[{
+                "pre_content_data" : [],
+                "content_data" : ["homePage"],
+                "post_content_data" : ["HomePageFooter"],
+                "run_functions" : ["homePageAnimations"],
+                "post_run_functions" : ["scrollStart"]
+            }]
+        }
+    ],
+    "name-of-view" : [
+        {
+            "data_link" : "",
+            "url_data" : [],
+            "title" : "About",
+            "description" : "About App.",
+            "sections" :[{
+                "first-section-name":[{
+                    "content_data" : ["firstSection"],
+                    "run_functions" : ["functionsToRun"]
+                }],
+                "second-section-name":[{
+                    "sections" : [{
+                        "second-section-sub-name-one":[{
+                            "content_data" : ["firstSubSection"],
+                            "run_functions" : ["functionsToRun"]
+                        }],
+                        "second-section-sub-name-two":[{
+                            "content_data" : ["secondSubSection"],
+                            "run_functions" : ["functionsToRun"]
+                        }]
+                    }],
+                    "content_data" : ["secondSection"],
+                    "run_functions" : ["functionsToRun"]
+                }]
+            }],
+            "data_error" : "",
+            "error_section" : "",
+            "css" : [],
+            "js" : ["/js/main.js"],
+            "template_data" : [],
+            "template_functions" : [],
+            "pre_section_data" :[{
+                "pre_content_data" : [],
+                "content_data" : [],
+                "post_content_data" : [],
+                "run_functions" : [],
+                "post_run_functions" : []
+            }],
+            "landing_page_data" :[{
+                "pre_content_data" : [],
+                "content_data" : [],
+                "post_content_data" : [],
+                "run_functions" : [],
+                "post_run_functions" : []
+            }]
+        }
+    ]
+}

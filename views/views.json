@@ -1,0 +1,95 @@
+
+{
+    "home" : [
+        {
+            "data_link" : "",
+            "url_data" : [],
+            "title" : "Home",
+            "description" : "Home Page.",
+            "css" : ["/css/home.css"],
+            "js" : ["/js/template.js","/js/front.js"],
+            "template_data" : ["topMenu"],
+            "template_functions" : ["topMenuFade"],
+            "landing_page_data" :[{
+                "pre_content_data" : [],
+                "content_data" : ["homePage"],
+                "post_content_data" : ["HomePageFooter"],
+                "run_functions" : ["homePageAnimations"],
+                "post_run_functions" : ["scrollStart"]
+            }]
+        }
+    ],
+    "about" : [
+        {
+            "data_link" : "",
+            "url_data" : [],
+            "title" : "About Milkstate",
+            "description" : "About MilkstateJS.",
+            "data_error" : "/views/errors/player_error.html",
+            "error_section" : "/views/errors/section_error.html",
+            "css" : [],
+            "js" : ["/js/view_data/global.js","/models/user-menus.js","/models/explore.js","/js/view_data/player.js","/models/sub-menu.js","/models/manage-profile.js","/models/scene-header.js"],
+            "template_data" : ["loadMenus"],
+            "template_functions" : ["userMenu","animateMenu"],
+            "pre_section_data" :[{
+                "pre_content_data" : [],
+                "content_data" : ["playerHeader","loadSubMenu"],
+                "post_content_data" : [],
+                "run_functions" : ["manageProfile"],
+                "post_run_functions" : []
+            }],
+            "landing_page_data" :[{
+                "pre_content_data" : [],
+                "content_data" : ["playerLanding"],
+                "post_content_data" : [],
+                "run_functions" : [],
+                "post_run_functions" : []
+            }]
+        }
+    ],
+    "learn" : [
+        {
+            "data_link" : "",
+            "url_data" : [],
+            "title" : "Learn MilkstateJS",
+            "description" : "Learn how to use MilkstateJS.",
+            "sections" :[{
+                "install":[{
+                    "js" : [],
+                    "content_data" : [],
+                    "run_functions" : []
+                }],
+                "tutorial":[{
+                    "js" : [],
+                    "content_data" : [],
+                    "run_functions" : []
+                }],
+                "docs":[{
+                    "js" : [],
+                    "content_data" : [],
+                    "run_functions" : []
+                }]
+            }],
+            "data_error" : "/views/errors/data_error.html",
+            "error_section" : "/views/errors/section_error.html",
+            "css" : [],
+            "js" : ["/js/template.js"],
+            "template_data" : ["loadMenus"],
+            "template_functions" : ["topMenuFade"],
+            "pre_section_data" :[{
+                "pre_content_data" : [],
+                "content_data" : [],
+                "post_content_data" : [],
+                "run_functions" : [],
+                "post_run_functions" : []
+            }],
+            "landing_page_data" :[{
+                "pre_content_data" : [],
+                "content_data" : [],
+                "post_content_data" : [],
+                "run_functions" : [],
+                "post_run_functions" : []
+            }]
+        }
+    ]
+}

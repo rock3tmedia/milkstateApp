@@ -1,0 +1,118 @@
+/*prevent loading transitioning*/
+
+.preload * {
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -ms-transition: none !important;
+  -o-transition: none !important;
+}
+
+/*reset*/
+input:focus, textarea:focus {
+    outline: none;
+}
+input, textarea, select {-webkit-appearance: none; box-shadow: none !important; outline: none;
+    -webkit-border-radius:0;
+    -moz-border-radius:0;
+    border-radius:0;
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    -webkit-transition: "color 9999s ease-out, background-color 9999s ease-out";
+    -webkit-transition-delay: 9999s;
+}
+div, span, h1, h2, h3, h4, p, ul, li, a, form, ::before, ::after{
+    -moz-box-sizing:    border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing:        border-box;
+    outline:none;
+    /*
+    -webkit-user-select: none;       
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    */
+    margin:0;
+    padding:0;
+}
+button{
+    font-family:"robotoregular", Arial;
+    border:none;
+    background:none;
+    .ease();
+    outline:none;
+    -webkit-user-select: none;       
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    cursor:pointer;
+}
+span{
+    color:#fff;
+}
+h1, h2, h3, h4{
+    font-family:"robotobold", Arial;
+    font-weight:600;
+    color:#fff;
+}
+p, li, a{
+    font-family:"robotoregular", Arial;
+    color:#fff;
+}
+ul, li{
+    list-style:none;
+    list-style-type:none;
+}
+a{
+    outline:none;
+    -webkit-user-select: none;       
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    .ease();
+    margin:0;
+    padding:0;
+    text-decoration: none;
+    -webkit-backface-visibility:  hidden;
+    -webkit-tap-highlight-color:  transparent;
+}
+
+/*scrollbar*/
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-button {
+  width: 0px;
+  height: 0px;
+}
+::-webkit-scrollbar-thumb {
+  background: #000;
+  border: 0px none #ffffff;
+  border-radius:0;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #000;
+}
+::-webkit-scrollbar-thumb:active {
+  background: #000000;
+}
+::-webkit-scrollbar-track {
+  background: rgba(0,0,0,0.05);
+  border: 0px none #ffffff;
+  border-radius: 0;
+}
+::-webkit-scrollbar-track:hover {
+  background: rgba(0,0,0,0.1);
+}
+::-webkit-scrollbar-track:active {
+  background: rgba(0,0,0,0.1);
+}
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
