@@ -52,7 +52,7 @@ module.exports = function(grunt) {
           paths: ['css']
         },
         files: {
-          'app/master.css': 'css/master.less.css'
+          'css/master.css': 'css/master.less.css'
         }
       }
     },

@@ -1,16 +1,6 @@
-<?PHP
+<?php
 
 header('Content-type: application/json');
-
-//start session
-if(!isset($_SESSION)) 
-{ 
-    session_start(); 
-} 
-
-//functions
-include("../controls/@condb.php");
-include("../controls/@session.php");
 
 //store
 $api_data = array();
@@ -24,4 +14,3 @@ $api_data[] = $the_api_data;
 
 echo json_encode($api_data, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
 
-mysqli_close($con);
