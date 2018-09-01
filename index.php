@@ -1,12 +1,15 @@
-<?php 
-    $app_name = "milkstateApp";
+<?php
+
+//get options
+include 'options.php';
+
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <!-- base required -->
-        <base href="/<?php echo $app_name; ?>/" />
+        <base href="<?php echo $base_url; ?>" />
 
         <!-- meta tags -->
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -14,7 +17,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
         <meta name="description" content="milkstateJS." />
 
-        <!-- title of app -->
+        <!-- initial title of app -->
         <title>milkstateJS Example.</title>
 
         <!-- load icon -->
@@ -33,7 +36,13 @@
         <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
         <script type="text/javascript" src="js/iscroll-probe.js"></script>
         <script type="text/javascript" src="js/detectBrowser.js"></script>
-        <script type="text/javascript" src="../milkstateJS/dist/milkstate.dev.js"></script>
+
+        <!-- local or cdn -->
+        <!-- <script type="text/javascript" src="js/milkstate.dev.js"></script> -->
+        <!-- https://cdn.jsdelivr.net/gh/rock3tmedia/milkstateJS@final/dist/milkstate.min.js -->
+
+        <!-- for milkstateJS development -->
+        <script type="text/javascript" src="/milkstateJS/dist/milkstate.dev.js"></script> -->
         
         <!-- start app -->
         <script type="text/javascript">
@@ -42,7 +51,8 @@
                 //run
                 msJS({
                     app_name: "<?php echo $app_name; ?>",
-                    json_views: "views/views.json"
+                    json_views: "views/views.json",
+                    base_url: "<?php echo $base_url; ?>"
                 });
             });
         </script>

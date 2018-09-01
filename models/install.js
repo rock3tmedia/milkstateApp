@@ -13,3 +13,12 @@ function step2(){
 	return step_2;
 
 }
+
+
+function step3(){
+
+	var step_3 = 'Step 3';
+
+	return step_3;
+
+}
