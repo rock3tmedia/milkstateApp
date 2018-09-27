@@ -1,19 +1,25 @@
 
-# MilkshakeJS Framework
+# MilkstateJS Framework
 
-Instructions on using the milkshake.js framework.
+Instructions on using the Milkstate.js framework.
 
 ## About
 
-Milkshake is a Single Page App(SPA) PHP/MYSQL, and JavaScript based front and back end framework.
+Milkstate is a Single-page App(SPA) PHP/MYSQL(optional), and JavaScript based full-stack framework.
+
+The focus of this app was to build a smooth view-handler(router) by utilizing the History State API.
 
 ### Prerequisites
 
-PHP Version 5.5.34, MYSQL
+Apache 2.4, PHP Version 5.5.34, MYSQL, Node, Bower
 
 ### Installing
 
-Copy and paste the contents of the unzipped milkshake folder to your applications root directory.
+- Copy and paste the contents of the unzipped milkstate folder to your applications directory.
+
+- run npm install
+
+- Open and configure .htaccess accordingly.
 
 ## VIEW CONTROL - JSON STRUCTURE
 
