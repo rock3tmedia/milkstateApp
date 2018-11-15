@@ -1,13 +1,13 @@
 
 # MilkstateJS Framework
 
-Instructions on using the Milkstate.js framework.
+Instructions on using the Milkstate.js Engine.
 
 ## About
 
-Milkstate is a Single-page App(SPA) PHP/MYSQL(optional), and JavaScript based full-stack framework.
+Milkstate is a Single-page App(SPA) JavaScript Prototyping Engine.
 
-The focus of this app was to build a smooth view-handler(router) by utilizing the History State API.
+Quickly prototype your applications with complete full-stack capabilities. Unlike other protoyping frameworks, Milkstake allows you to continue devloping on the prototype to turn it into a fully functional app.
 
 ### Prerequisites
 
