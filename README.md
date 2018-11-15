@@ -7,7 +7,7 @@ Instructions on using the Milkstate.js Engine.
 
 Milkstate is a Single-page App(SPA) JavaScript Prototyping Engine.
 
-Quickly prototype your applications with complete full-stack capabilities. Unlike other protoyping frameworks, Milkstake allows you to continue devloping on the prototype to turn it into a fully functional app.
+Quickly prototype your applications with complete full-stack capabilities. Unlike other protoyping frameworks, Milkstake allows you to continue developing on the prototype to turn it into a fully functional app.
 
 ### Prerequisites
 
