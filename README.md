@@ -7,7 +7,7 @@ Instructions on using the Milkstate.js Engine.
 
 Milkstate is a Single-page App(SPA) JavaScript Prototyping Engine.
 
-Quickly prototype your applications with complete full-stack capabilities. Unlike other protoyping frameworks, Milkstake allows you to continue developing on the prototype to turn it into a fully functional app.
+Quickly prototype your applications with complete full-stack capabilities. Unlike other prototyping frameworks, Milkstate allows you to continue developing on the prototype to turn it into a fully functional app. The endpoints are in PHP by default, but can easily be changed.
 
 ### Prerequisites
 
@@ -23,66 +23,64 @@ Apache 2.4, PHP Version 5.5.34, MYSQL, Node, Bower
 
 ## VIEW CONTROL - JSON STRUCTURE
 
-The following is the structure of the json file that controls the views of the entire app.
+The following is the structure of the json file that controls the views of the entire app. This is not a working example, it is only for reference.
 
-Located in /views/views.json. **View1** contains sections, **View2** contains sub sections.
+Located in /views/views.json.
 
 ```javascript
 {
-    "view1" : [
+    "views/view1" : [ //set your url route
         {
-            "view_link" : "/views/view_name.php", //link to where you get the post url data
-            "url_data" : ["url_data_name", "url_data_name2"], //url data posted to view_link to get data
+            "data_link" : "/api/view1-api", // can link to a php file or directly to the API
+            "url_data" : ["url_data_name", "url_data_name2"], // specific header information posted to API if any
             "title" : "Name of Page", //meta title of view
-            "description" : "Description of Page.", //meta description of view
-            "sections" :[{ //sections within view if any
-                "sectionOneName":[{
-                    "content_data" : ["loadContentName","loadContentName",], //section data to load - returned html from function
-                    "run_functions" : ["runFunctionName","runFunctionName2"] //functions to run after appended html
-                }],
-                "sectionTwoName":[{
-                }]
-            }],
-            "error_link" : "/views/errors/view_error.html", //error if view item is not valid
-            "error_section" : "/views/errors/section_error.html", //error if the section within view is not valid
-            "landing_page" : "/views/view.php", //landing page of view if there is one
-            "css" : ["/css/master.css","/css/fonts.css"], //css to load
-            "js" : ["/js/main.js","/js/controls/menu.js"], //js files to preload
-            "content_data" : ["loadContentName","loadContentName2"] //view data to load - returned html from function
-        }
-    ],
-    "view2" : [
-        {
-            "view_link" : "/views/view_name.php", //link to where you get the post url data
-            "url_data" : ["url_data_name", "url_data_name2"], //url data posted to view_link to get data
-            "title" : "Name of Page", //meta title of view
-            "description" : "Description of Page.", //meta description of view
-            "sections" :[{ //sections within view if any
-                "sectionOneName":[{
-                    "content_data" : ["loadContentName","loadContentName",], //section data to load - returned html
-                    "run_functions" : ["runFunctionName","runFunctionName2"] //functions to run after appended html
-                }],
-                "sectionTwoName":[{
-                    "sub_sections" : [{ //sub sections if there is any
-                        "subSectionName":[{
-                            "content_data" : ["loadContentName"], //sub section data to load - returned html
-                            "run_functions" : ["runFunctionName"] //functions to run after appended html from content_data
+            "description" : "Description of Page.", // meta description of view
+            "sections" :[{ // create as many sections within sections as you wish
+                "section-one":[{
+                    "sections" :[{
+                        "section-one-a":[{
+                            "title" : "Name of section", // will override
+                            "description" : "Description of section.", // will override previous sections
+                            "js" : ["js/urfile.js"],
+                            "content_data" : ["data1a"],
+                            "run_functions" : ["functionNameToRun"] // functions to run after view is loaded - joined throughout
                         }],
-                        "subSectionTwoName":[{
-                            "content_data" : ["loadContentName"], //sub section data to load - returned html
-                            "run_functions" : ["runFunctionName"] //functions to run after appended html from content_data
-                        }]
+                        "section-one-b":[{ // will override
+                            "title" : "Name of section", // will override
+                        }],
                     }],
-                    "content_data" : ["loadContentName"], //section data to load - returned html from function
-                    "run_functions" : ["runFunctionName"] //functions to run after appended html - runs before but in sequence with sub section functions
+                    "title" : "Section One Title", //meta
+                    "description" : "Description of section.", //meta
+                    "js" : ["js/contentData.js"], // js files to preload
+                    "content_data" : ["data1"], // returned data from files
+                    "run_functions" : [] // functions to run after view is loaded
+                    }],
+                "section-two":[{ // same as above
+                    "js" : [],
+                    "content_data" : [],
+                    "run_functions" : []
                 }]
             }],
-            "error_link" : "/views/errors/view_error.html", //error if view item is not valid
-            "error_section" : "/views/errors/section_error.html", //error if the section within view is not valid
-            "landing_page" : "/views/view.php", //landing page of view if there is one, otherwise directed to error_link
-            "css" : ["/css/master.css","/css/fonts.css"], //css to load
-            "js" : ["/js/main.js","/js/controls/menu.js"], //js files to preload
-            "content_data" : ["loadContentName","loadContentName2"] //view data to load - returned html from function
+            "data_error" : "templates/app.data_error.html", // error if data comes back false
+            "error_section" : "templates/app.section_error.html", // error when view is invalid
+            "css" : ["css/main.css"], // preload multiple css files
+            "js" : ["js/file.js"], // preload multiple js files
+            "template_data" : ["topMenu"], // content that is outside the view and consistent throughout the app
+            "template_functions" : ["slideInMenu"], // functions to run on initial load
+            "pre_section_data" :[{ // data to load before loading a section
+                "pre_content_data" : ["pageHeader"], // content loaded before the view
+                "content_data" : ["pageContent"], // content loaded in the view
+                "post_content_data" : ["pageFooter"], // content loaded after the view
+                "run_functions" : ["animateAll"], // functions to run after the view is loaded
+                "post_run_functions" : [] // post secondary functions to run if needed
+            }],
+            "landing_page_data" :[{ // if set, this view will have a landing page.
+                "pre_content_data" : [], // same as above
+                "content_data" : [],
+                "post_content_data" : [],
+                "run_functions" : [],
+                "post_run_functions" : []
+            }]
         }
     ]
 }
@@ -96,22 +94,22 @@ forms.js controls the forms on the application.
 
 ```html
 <div class="form_area">
-	<form form-data="data_val"><!-- pertaining data val -->
-		<!-- input text-->
-		<div id="data-group"><!-- errors get appended to this area -->
-			<div class="input_row">
-				<div class="input">
-					<input type="text" tabindex="1" placeholder="Data Name" name="this-data-name" class="ajax js_focus js_placeholder" data-form="this-form-name" data-name="this-data-name" data-error-target="#data-group">
-				</div>
-			</div>
-		</div>
-		<!-- submit -->
-		<div class="form_controls">
-		    <span class="form_submit">
-		    	<input type="submit" value="Add Video" class="ajax" data-form="this-form-name" data-url="/controls/" tabindex="2" data-name="submit">
-		    </span>
-		</div>
-	</div>
+    <form form-data="data_val"><!-- pertaining data val -->
+        <!-- input text-->
+        <div id="data-group"><!-- errors get appended to this area -->
+            <div class="input_row">
+                <div class="input">
+                    <input type="text" tabindex="1" placeholder="Data Name" name="this-data-name" class="ajax js_focus js_placeholder" data-form="this-form-name" data-name="this-data-name" data-error-target="#data-group">
+                </div>
+            </div>
+        </div>
+        <!-- submit -->
+        <div class="form_controls">
+            <span class="form_submit">
+                <input type="submit" value="Add Video" class="ajax" data-form="this-form-name" data-url="/controls/" tabindex="2" data-name="submit">
+            </span>
+        </div>
+    </div>
 </div>
 ```
 
@@ -207,7 +205,7 @@ Located in /js/popups.js.
 
 ### USING POPUPS
 
-Any item defined with the class **"popup"** will instantiate an on click for it.
+Any item defined with the class **"popup"** will instantiate an onclick for it.
 
 The following are attributes involved. No order is required, and of course it must be on the same item where the popup is defined.
 
@@ -230,24 +228,24 @@ The following is the markup you will need to add within the popup view for toggl
 
 ```html
 <div class="pop_toggle_header">
-	<div><a href="#" class="pop_toggle selected toggle" data-toggle="1">Option 1</a></div>
-	<div><a href="#" class="pop_toggle toggle" data-toggle="2">Option 2</a></div>
+    <div><a href="#" class="pop_toggle selected toggle" data-toggle="1">Option 1</a></div>
+    <div><a href="#" class="pop_toggle toggle" data-toggle="2">Option 2</a></div>
 </div>
 <div class="pop_content toggle_container" id="pop-content">
-	<div class="toggle_box active toggle_1">
-	    <div class="scroll_wrap pop_scroll" id="pop-scroll">
+    <div class="toggle_box active toggle_1">
+        <div class="scroll_wrap pop_scroll" id="pop-scroll">
             <div class="scroll_content">
-            	Content in here will be scrolled
-    		</div>
-    	</div>
-	</div>
-	<div class="toggle_box toggle_2">
-	    <div class="scroll_wrap pop_scroll" id="pop-scroll2">
+                Content in here will be scrolled
+            </div>
+        </div>
+    </div>
+    <div class="toggle_box toggle_2">
+        <div class="scroll_wrap pop_scroll" id="pop-scroll2">
             <div class="scroll_content">
-				Content in here will be scrolled
-			</div>
-		</div>
-	</div>
+                Content in here will be scrolled
+            </div>
+        </div>
+    </div>
 </div>
 ```
 
