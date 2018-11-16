@@ -9,6 +9,8 @@ Milkstate is a Single-page App(SPA) JavaScript Prototyping Engine.
 
 Quickly prototype your applications with complete full-stack capabilities. Unlike other prototyping frameworks, Milkstate allows you to continue developing on the prototype to turn it into a fully functional app. The endpoints are in PHP by default, but can easily be changed.
 
+The main goal of developing this framework was to provide a seemless user experience that avoids flickers and content loading blips like that of popular frameworks.
+
 ### Prerequisites
 
 Apache 2.4, PHP Version 5.5.34, MYSQL, Node, Bower
