@@ -129,12 +129,12 @@ The following are classes that can be added to an input.
 
 Located in /css/popup.less
 
-### PHP JSON OBJECT
+### DATA OBJECT
 
-The following is the php json object data needed to send back to the form.
+The following are the data object variables available to send through the forms.
 
 ```php
-//settings - set to value 1 or 0. JavaScript does not read 'true' or 'false' from php.
+//settings - set to value 1 or 0. Do not use true or false;
 $data['success'] = 1;
 $data['live_update'] = 1; //REQUIRES: 'success'
 $data['remove_popup'] = 1; //remove popup if exists
@@ -184,7 +184,7 @@ $data['jcrop_ratio_h'] = 0;
 
 #### Live Values
 
-Below is the structure required in using live values. This targets an id and sets the value for that specific item. You can have as many values as needed.
+Below is the variable structure required in using live values. This targets an id and sets the value for that specific item. You can have as many values as needed.
 
 ```
 //live values
